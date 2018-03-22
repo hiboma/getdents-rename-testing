@@ -19,8 +19,8 @@ struct linux_dirent {
 };
 
 void change_name(char *prefix, struct linux_dirent * d) {
-    char old[1024];
-    char new[1024];
+    char old[PATH_MAX+1];
+    char new[PATH_MAX+1];
 
     sprintf(old, "%s/%s",  prefix, d->d_name);
     sprintf(new, "%s/%s+", prefix, d->d_name);
